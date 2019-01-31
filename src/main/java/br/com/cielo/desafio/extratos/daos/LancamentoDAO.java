@@ -8,4 +8,5 @@ import br.com.cielo.desafio.extratos.models.Lancamento;
 
 public interface LancamentoDAO extends CrudRepository<Lancamento, Serializable>{
 
+	public Lancamento findByIdUnicoLegado(Integer idUnicoLegado);
 }

@@ -4,7 +4,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
-@SpringBootApplication(scanBasePackages="com.mangofactory.swagger")
+@SpringBootApplication(scanBasePackages= {"br.com.cielo.desafio.extratos","com.mangofactory.swagger"})
 public class Application extends SpringBootServletInitializer {
 
 		@Override
