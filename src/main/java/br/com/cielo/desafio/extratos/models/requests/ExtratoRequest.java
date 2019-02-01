@@ -1,4 +1,4 @@
-package br.com.cielo.desafio.extratos.controllers.requests;
+package br.com.cielo.desafio.extratos.models.requests;
 
 public class ExtratoRequest {
 

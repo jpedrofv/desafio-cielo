@@ -1,4 +1,4 @@
-package br.com.cielo.desafio.extratos.controllers.responses;
+package br.com.cielo.desafio.extratos.models.responses;
 
 import java.math.BigDecimal;
 import java.util.Date;

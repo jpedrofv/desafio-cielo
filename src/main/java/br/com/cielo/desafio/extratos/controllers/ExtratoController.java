@@ -9,16 +9,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.cielo.desafio.extratos.controllers.requests.ExtratoRequest;
-import br.com.cielo.desafio.extratos.controllers.responses.ExtratoResponse;
 import br.com.cielo.desafio.extratos.controllers.responses.RespostaGenerica;
 import br.com.cielo.desafio.extratos.exceptions.ParametrosObrigatoriosException;
+import br.com.cielo.desafio.extratos.models.requests.ExtratoRequest;
+import br.com.cielo.desafio.extratos.models.responses.ExtratoResponse;
 import br.com.cielo.desafio.extratos.services.ExtratoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponses;
 import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 @RestController
 @Api(value="Extratos", description="Extrato de Lançamentos em Conta.")

@@ -7,12 +7,12 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.cielo.desafio.extratos.controllers.requests.ExtratoRequest;
-import br.com.cielo.desafio.extratos.controllers.responses.ExtratoResponse;
 import br.com.cielo.desafio.extratos.exceptions.ParametrosObrigatoriosException;
 import br.com.cielo.desafio.extratos.models.DomicilioBancario;
 import br.com.cielo.desafio.extratos.models.Lancamento;
 import br.com.cielo.desafio.extratos.models.Remessa;
+import br.com.cielo.desafio.extratos.models.requests.ExtratoRequest;
+import br.com.cielo.desafio.extratos.models.responses.ExtratoResponse;
 
 @Service
 public class ExtratoService {
