@@ -19,14 +19,14 @@ public class LancamentoDAOCustom {
 
 	public List<Lancamento> buscarPorIdRemessa(List<Integer> listaIdRemessa) {
 
-		List<String> params = new ArrayList<>();
-		params.add(String.join(",", listaIdRemessa.stream().map(String::valueOf).collect(Collectors.toList())));
+		
+		String in = String.join(",", listaIdRemessa.stream().map(String::valueOf).collect(Collectors.toList()));
 		
 		StringBuilder query = new StringBuilder();
 		query.append("SELECT * FROM TB_LANCAMENTO");
-		query.append(" WHERE ID_REMESSA IN (?)");
+		query.append(" WHERE ID_REMESSA IN ("+in+")");
 		
-		return jdbcTemplate.query(query.toString(), params.toArray(), new BeanPropertyRowMapper<>(Lancamento.class));
+		return jdbcTemplate.query(query.toString(), new BeanPropertyRowMapper<>(Lancamento.class));
 	}
 
 }

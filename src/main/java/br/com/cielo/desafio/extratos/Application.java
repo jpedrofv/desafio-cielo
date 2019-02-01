@@ -3,8 +3,10 @@ package br.com.cielo.desafio.extratos;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication(scanBasePackages= {"br.com.cielo.desafio.extratos","com.mangofactory.swagger"})
+@SpringBootApplication
+@ComponentScan(basePackages={"br.com.cielo.desafio.extratos","com.mangofactory.swagger"})
 public class Application extends SpringBootServletInitializer {
 
 		@Override

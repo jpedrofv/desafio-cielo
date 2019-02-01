@@ -22,4 +22,13 @@ public class ExtratosControllerAdvice extends ResponseEntityExceptionHandler {
 		return handleExceptionInternal(ex, response, new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
 
 	}
+	
+	@ExceptionHandler(value = Exception.class)
+	protected ResponseEntity<Object> exceptionNaoMapeada(Exception e, WebRequest request) {
+		RespostaGenerica<?> response = new RespostaGenerica<>();
+		response.setMsg(e.getMessage());
+		response.setData(null);
+		return handleExceptionInternal(e, response, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
+
+	}
 }

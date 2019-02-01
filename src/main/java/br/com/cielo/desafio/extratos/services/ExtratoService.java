@@ -45,14 +45,38 @@ public class ExtratoService {
 				
 				List<Lancamento> listaLancamento = lancamentoService.buscarLancamentosPorIdRemessa(listaIdRemessa);
 				
+				
 				listaLancamento.stream()
 				.filter(lancamento -> lancamento != null)
 				.forEach(l -> {
 					
+					ExtratoResponse extrato = new ExtratoResponse();
+					
+					Remessa remessa = listaRemessas.stream()
+					.filter(r -> r != null && r.getIdRemessa() == l.getIdRemessa())
+					.findAny()
+					.orElse(null);
+					
+					if(remessa != null) {
+						extrato.setNomeSituacaoRemessa(remessa.getNomeSituacaoRemessa());
+						extrato.setDescricaoRemessa(remessa.getNomeTipoOperacao());
+						extrato.setDataLancamento(l.getDtLancamentoContaCorrenteCliente());
+						extrato.setDataEfetivaLancamento(l.getDtEfetivaLancamento());
+						extrato.setNumEvento(l.getNumEvento());
+						extrato.setValorFinal(l.getValorLancamentoRemessa());
+						extrato.setDadosBancarios(l.getNomeBanco(), domicilioBancario.getNumAgencia(), domicilioBancario.getNumContaCorrente());
+						
+						response.add(extrato);
+					}
+					
 				});
 			}
+		}else {
+			
+			throw new ParametrosObrigatoriosException("Filtro para pesquisa inválido.");
+			
 		}
-		return null;
+		return response;
 	}
 
 }
